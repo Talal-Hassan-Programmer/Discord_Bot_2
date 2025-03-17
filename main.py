@@ -36,7 +36,7 @@ async def hello(interaction: discord.Interaction):
 #COMMANDS  (hello)
 @client.tree.command()
 async def help(interaction: discord.Interaction):
-    """Says hello!"""
+    """HELP!"""
     view = funcs.help_1.Help
     embed = view.embed
     await interaction.response.send_message(view=view(),embed=embed)
