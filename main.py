@@ -27,13 +27,13 @@ async def on_ready():
     print(f'Logged in as {client.user} (ID: {client.user.id})')
     print('------')
 
-#COMMANDS  (hello)
+#COMMANDS  (HELLO)
 @client.tree.command()
 async def hello(interaction: discord.Interaction):
     """Says hello!"""
     await interaction.response.send_message(f'Hi, {interaction.user.mention}')
 
-#COMMANDS  (hello)
+#COMMANDS  (HELP)
 @client.tree.command()
 async def help(interaction: discord.Interaction):
     """HELP!"""
