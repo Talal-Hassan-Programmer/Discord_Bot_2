@@ -1,8 +1,7 @@
 import discord
 from discord import app_commands
 
-import funcs
-import funcs.help_1
+import funcs, funcs.help_1
 
 
 #MAIN CODE FROM DISCORD DOCS
@@ -18,7 +17,7 @@ class MyClient(discord.Client):
 
 
 #SETTING THE BOT AND INTENTS
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 client = MyClient(intents=intents)
 
 #ON READY EVENT MAIN EVENT
@@ -26,6 +25,25 @@ client = MyClient(intents=intents)
 async def on_ready():
     print(f'Logged in as {client.user} (ID: {client.user.id})')
     print('------')
+
+#Event to assine roles to new members and send a welcome message
+@client.event
+async def on_member_join(member):
+    channel = client.get_channel(1351621585030615151)  #REplace the ID with the channel you want the message to send in
+
+    embed = discord.Embed(
+        title=f"Welcome **{member.mention}** !",
+        description="Welcome to the server! We hope you enjoy your stay here!",
+        color=discord.Color.green()
+        )
+
+    role = discord.utils.get(member.guild.roles, name="Member")
+
+    await member.add_roles(role)
+    await channel.send(embed=embed)
+
+
+
 
 #COMMANDS  (HELLO)
 @client.tree.command()
