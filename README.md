@@ -9,7 +9,7 @@ Discord Bot 2 is a customizable bot designed to enhance your Discord server expe
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/Discord_Bot_2.git
+    git clone [https://github.com/yourusername/Discord_Bot_2.git](https://github.com/Talal-Hassan-Programmer/Discord_Bot_2)
     ```
 2. update the token in client.run()
 
@@ -20,4 +20,4 @@ Discord Bot 2 is a customizable bot designed to enhance your Discord server expe
 ## Usage
 Run the bot using:
 
-python bot.py
+main.py
